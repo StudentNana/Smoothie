@@ -1,0 +1,30 @@
+{
+"rules": {
+	"class-name": 
+	true, "comment-format": [
+		true,
+        "check-space"
+	], 
+	"indent": [
+		true,
+		"spaces"
+	],
+	"no-duplicate-variable": true,
+	"no-eval": true,
+	"no-internal-module": true, 
+	"no-trailing-whitespace": true,
+	"no-var-keyword": true, 
+	"one-line": [
+		true, 
+		"check-open-brace", 
+		"check-whitespace"
+	], 
+	"quotemark": [
+		false,
+		"double"
+	], 
+	"semicolon": [
+		true,
+		"always"
+	],
+}
