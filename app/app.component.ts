@@ -1,112 +1,52 @@
 import { Component, OnInit } from '@angular/core';
 import { Smoothie } from './smoothie';
+import { SmoothieService } from './smoothie.service'
+import {SMOOTHIES} from "./smoothies-mockdata";
 
 @Component({
     selector: "my-app",
     template: "<h1> Smoothie </h1>"
 })
 
-// Smoothie Objekt
-const SMOOTHIES:Smoothie[] = [
-    { name: 'Apfel', image: 'foto', bewertung: 4, groesse: 200, zutaten: '2 Äpfel, 1 Banane, 1/2 Schale Erdbeeren', zubereitung: ' Waschen, schneiden' },
-    { name: 'Banane', image: "foto", bewertung: 5, groesse: 250, zutaten: '1 Banane, 200g Himbeeren', zubereitung: ' Waschen, schneiden' },
-    { name: 'Gurke', image: "foto", bewertung: 2, groesse: 200, zutaten: '1 Apfel, 250g Weintrauben', zubereitung: ' Waschen, schneiden' },
-    { name: 'Kiwi', image: "foto", bewertung: 8, groesse: 200, zutaten: '3 Kiwi, 2 Äpfel, 1 Banane', zubereitung: ' Waschen, schneiden' },
-    { name: 'Orange', image: "foto", bewertung: 6, groesse: 200, zutaten: ' 3 Orangen, 200g Erdbeeren, 1 Äpfel', zubereitung: ' Waschen, schneiden' },
-    { name: 'Spinat', image: "foto", bewertung: 4, groesse: 200, zutaten: '50 g Spinat, 1 Löffel Leinenöl,  2 Äpfel', zubereitung: ' Waschen, schneiden' }
-];
+
 
 @Component({
     selector: 'my-app',
-    styles: [`
-    .selected {
-      background-color: #129bd2 !important;
-      color: white;
-    }
-    .smoothies {
-      margin: 0 0 2em 0;
-      list-style-type: none;
-      padding: 10px;
-      margin: 10px;
-      width: 90%;
-    }
-    .smoothies .pic{
-       margin-left: 10px 5px 5px 5px;
-       width: 60px;
-       height: 87px;
-    }
-    .smoothies li {
-      display: inline;
-      cursor: pointer;
-      position: relative;
-      left: 0;
-      background-color: #65d0fb;
-      margin: .5em;
-      padding: .3em 0;
-      height: 100px;
-      border-radius: 4px;
-    }
-    .smoothies li.selected:hover {
-      background-color: #39a0ca !important;
-      color: white;
-    }
-    .smoothies li:hover {
-      color: #607D8B;
-      background-color: #29b0e6;
-      left: .1em;
-    }
-    .smoothies .text {
-      position: relative;
-      top: -3px;
-      padding: 10px;
-    }
-    .red-bg{
-        background-color: red !important;
-    }
-    
-  `],
-    template: `
-    <h1>{{title}}</h1>
-    <ul class="smoothies">
-        <li *ngFor="let smoothie of smoothies; let i = index" [class.selected]="smoothie === selectedSmoothie" (click)="onSelect(smoothie)">
-            <span class="badge">{{smoothie.id}}</span> 
-            <img src="pic/smoothie.jpeg" class="pic">
-            {{smoothie.name}}
-        </li>
-    </ul>
-    <my-smoothie-detail [smoothie]= "selectedSmoothie" [details]= "details"></my-smoothie-detail>  
-    
-    `
+    styleUrls: ['app/app.component.css'],
+    templateUrl: 'app/app.component.html',
+    providers: [SmoothieService]
 })
 
 export class AppComponent implements OnInit {
-    title: string;
-    smoothies: Smoothie [];
-    values: string;
-    selectedSmoothie: Smoothie;
+    title: string = "Unsere leckere Smoothies!";
+    smoothies: Smoothie [] = null;
+    values: string = '';
+    selectedSmoothie: Smoothie = null;
     details: string = "Smoothie-Details";
+    villian: string;
+    hideDetails: boolean = false;
 
-    constructor(){
-        this.title = "Unsere leckere Smoothies";
-        this.smoothies = null;
-        this.values = '';
-        this.selectedSmoothie = null;
+    constructor(private smoothieService:SmoothieService){
 
     }
 
-    /** demo on ngOnInit usage. Called by AngularJS after constructor */
+    /** Called by AngularJS after constructor and after injected services and child-components are set */
     ngOnInit():void{
-        this.smoothies = SMOOTHIES;
+        this.smoothies = this.smoothieService.getSmoothies();
     }
 
+    /**  assigns an Smoothie to the Component's "selectedSmoothie" property by clicking onto one of the Smoothies, which are listed on
+     * the *ngFor-generated smoothie list
+     * @param the Smoothie that has been clicked last */
     onSelect(smoothie:Smoothie):void{
         this.selectedSmoothie = smoothie;
+        this.hideDetails = false;
     }
 
     /** function to be toggled on keyUp in template input. Will extend this.values by current input value
      * @param event of input
      */
-    onKeyUp(event:any) {
+    /*onKeyUp(event:any) {
         this.values += event.target.value + ' | ';
-    }
+    }*/
 }
