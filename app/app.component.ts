@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Smoothie } from './smoothie';
-import { SmoothieService } from './smoothie.service'
+import { Smoothie } from './smoothie/smoothie';
+import { SmoothieService } from './smoothie/smoothie.service'
 
 @Component({
     selector: "my-app",
