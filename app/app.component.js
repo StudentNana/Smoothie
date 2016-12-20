@@ -1,6 +1,5 @@
-System.register(['@angular/core', './smoothie.service'], function(exports_1, context_1) {
+System.register(["@angular/core", "./smoothie.service"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,17 +9,18 @@ System.register(['@angular/core', './smoothie.service'], function(exports_1, con
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, smoothie_service_1;
-    var AppComponent;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, smoothie_service_1, AppComponent;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
             function (smoothie_service_1_1) {
                 smoothie_service_1 = smoothie_service_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             AppComponent = (function () {
                 function AppComponent(smoothieService) {
                     this.smoothieService = smoothieService;
@@ -46,23 +46,23 @@ System.register(['@angular/core', './smoothie.service'], function(exports_1, con
                     this.selectedSmoothie = smoothie;
                     this.hideDetails = false;
                 };
-                AppComponent = __decorate([
-                    core_1.Component({
-                        selector: "my-app",
-                        template: "<h1> Smoothie </h1>"
-                    }),
-                    core_1.Component({
-                        selector: 'my-app',
-                        styleUrls: ['app/app.component.css'],
-                        templateUrl: 'app/app.component.html',
-                        providers: [smoothie_service_1.SmoothieService]
-                    }), 
-                    __metadata('design:paramtypes', [smoothie_service_1.SmoothieService])
-                ], AppComponent);
                 return AppComponent;
             }());
+            AppComponent = __decorate([
+                core_1.Component({
+                    selector: "my-app",
+                    template: "<h1> Smoothie </h1>"
+                }),
+                core_1.Component({
+                    selector: 'my-app',
+                    styleUrls: ['app/app.component.css'],
+                    templateUrl: 'app/app.component.html',
+                    providers: [smoothie_service_1.SmoothieService]
+                }),
+                __metadata("design:paramtypes", [smoothie_service_1.SmoothieService])
+            ], AppComponent);
             exports_1("AppComponent", AppComponent);
         }
-    }
+    };
 });
 //# sourceMappingURL=app.component.js.map

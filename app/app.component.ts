@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Smoothie } from './smoothie';
 import { SmoothieService } from './smoothie.service'
-import {SMOOTHIES} from "./smoothies-mockdata";
 
 @Component({
     selector: "my-app",

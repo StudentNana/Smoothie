@@ -1,0 +1,54 @@
+/** CSS for root component  of Smoothie app
+  *
+  * @author: Nana
+ */
+
+.selected {
+    background-color: #129bd2 !important;
+    color: white;
+}
+.smoothies {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+}
+.smoothies .pic{
+    margin-left: 10px 5px 5px 5px;
+    width: 60px;
+    height: 87px;
+}
+.smoothies li {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    background-color: #65d0fb;
+    margin: .5em;
+    padding: .3em 0;
+    height: 100px;
+    width: 300px;
+    border-radius: 4px;
+}
+.smoothies li.selected:hover {
+    background-color: #39a0ca !important;
+    color: white;
+}
+.smoothies li:hover {
+    color: #607D8B;
+    background-color: #29b0e6;
+    left: .1em;
+}
+.smoothies .text {
+    position: relative;
+    top: -3px;
+    padding: 10px;
+}
+.red-bg{
+    background-color: red !important;
+}
+button {
+    float: none;
+    background-color: #fbe3b7;
+    margin: 0 5px 0 15px;
+}

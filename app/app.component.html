@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+<p *ngIf="obst"> obst ist : {{obst}}</p>
+
+<h2 *ngIf="!smoothies">Loading Smoothies....</h2>
+<h2 *ngIf="smoothies"> Wählen Sie Ihr Smoothie aus! </h2>
+
+<ul class="smoothies">
+    <li *ngFor="let smoothie of smoothies; let i = index" [class.selected]="smoothie === selectedSmoothie" >
+        <span class="badge">{{smoothie.id}}</span>
+        <img src="pic/smoothie.jpeg" class="pic">
+        {{smoothie.name}}
+        <button (click)="onSelect(smoothie)"> Details </button>
+    </li>
+</ul>
+
+<my-smoothie-detail [hidden]="!selectedSmoothie" [smoothie]="selectedSmoothie" [details]= "details" (addObst)="obst=$event" ></my-smoothie-detail>
