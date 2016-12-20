@@ -1,23 +1,13 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
+import { Smoothie } from './smoothie';
 
 @Component({
     selector: "my-app",
     template: "<h1> Smoothie </h1>"
 })
 
-// new class Smoothie
-export class Smoothie {
-    // id: number;
-    name: string;
-    zutaten: string; // TO DO: String Array
-    groesse: number;
-    bewertung: number; // TO DO: Number oder Objekt?
-    image: string; // TO DO: imageURL
-    zubereitung: string;
-}
-
 // Smoothie Objekt
-const SMOOTHIES: Smoothie[] = [
+const SMOOTHIES:Smoothie[] = [
     { name: 'Apfel', image: 'foto', bewertung: 4, groesse: 200, zutaten: '2 Äpfel, 1 Banane, 1/2 Schale Erdbeeren', zubereitung: ' Waschen, schneiden' },
     { name: 'Banane', image: "foto", bewertung: 5, groesse: 250, zutaten: '1 Banane, 200g Himbeeren', zubereitung: ' Waschen, schneiden' },
     { name: 'Gurke', image: "foto", bewertung: 2, groesse: 200, zutaten: '1 Apfel, 250g Weintrauben', zubereitung: ' Waschen, schneiden' },
@@ -28,28 +18,6 @@ const SMOOTHIES: Smoothie[] = [
 
 @Component({
     selector: 'my-app',
-    template: `
-    <h1>{{title}}</h1>
-    <ul class="smoothies">
-      <li *ngFor="let smoothie of smoothies"
-        [class.selected]="smoothie === selectedSmoothie"
-        (click)="onSelect(smoothie)">
-        <img src="pic/smoothie.jpeg" class="pic">
-        {{smoothie.name}}
-      </li>
-    </ul>
-   <div *ngIf="selectedSmoothie">
-      <h2>{{selectedSmoothie.name}} Smoothie Rezept! </h2>
-      <div><label>Bewertung: </label>{{selectedSmoothie.bewertung}}</div>
-      <div>
-        <label>Smoothie Name: </label>
-        <input [(ngModel)]="selectedSmoothie.name" placeholder="name"/>
-      </div>
-      <div><label>Groesse in ml: </label>{{selectedSmoothie.groesse}}</div>
-      <div><label>Zutaten: </label>{{selectedSmoothie.zutaten}}</div>
-      <div><label>Zubereitung: </label>{{selectedSmoothie.zubereitung}}</div>
-    </div>
-  `,
     styles: [`
     .selected {
       background-color: #129bd2 !important;
@@ -92,17 +60,53 @@ const SMOOTHIES: Smoothie[] = [
       top: -3px;
       padding: 10px;
     }
+    .red-bg{
+        background-color: red !important;
+    }
     
-  `]
+  `],
+    template: `
+    <h1>{{title}}</h1>
+    <ul class="smoothies">
+        <li *ngFor="let smoothie of smoothies; let i = index" [class.selected]="smoothie === selectedSmoothie" (click)="onSelect(smoothie)">
+            <span class="badge">{{smoothie.id}}</span> 
+            <img src="pic/smoothie.jpeg" class="pic">
+            {{smoothie.name}}
+        </li>
+    </ul>
+    <my-smoothie-detail [smoothie]= "selectedSmoothie" [details]= "details"></my-smoothie-detail>  
+    
+    `
 })
 
-export class AppComponent {
-    name: string;
-    title = 'Unsere leckere Smoothie';
-    smoothies = SMOOTHIES;
+export class AppComponent implements OnInit {
+    title: string;
+    smoothies: Smoothie [];
+    values: string;
     selectedSmoothie: Smoothie;
-    onSelect(smoothie: Smoothie): void {
+    details: string = "Smoothie-Details";
+
+    constructor(){
+        this.title = "Unsere leckere Smoothies";
+        this.smoothies = null;
+        this.values = '';
+        this.selectedSmoothie = null;
+
+    }
+
+    /** demo on ngOnInit usage. Called by AngularJS after constructor */
+    ngOnInit():void{
+        this.smoothies = SMOOTHIES;
+    }
+
+    onSelect(smoothie:Smoothie):void{
         this.selectedSmoothie = smoothie;
     }
-}
 
+    /** function to be toggled on keyUp in template input. Will extend this.values by current input value
+     * @param event of input
+     */
+    onKeyUp(event:any) {
+        this.values += event.target.value + ' | ';
+    }
+}
