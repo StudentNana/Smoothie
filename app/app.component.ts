@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     values: string = '';
     selectedSmoothie: Smoothie = null;
     details: string = "Smoothie-Details";
-    villian: string;
+    obst: string;
     hideDetails: boolean = false;
 
     constructor(private smoothieService:SmoothieService){
@@ -32,7 +32,10 @@ export class AppComponent implements OnInit {
 
     /** Called by AngularJS after constructor and after injected services and child-components are set */
     ngOnInit():void{
-        this.smoothies = this.smoothieService.getSmoothies();
+        // this.smoothies = this.smoothieService.getSmoothies();
+        this.smoothieService
+            .getSmoothiesSlowly()
+            .then(smoothies => this.smoothies = smoothies);
     }
 
     /**  assigns an Smoothie to the Component's "selectedSmoothie" property by clicking onto one of the Smoothies, which are listed on

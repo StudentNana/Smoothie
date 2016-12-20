@@ -33,7 +33,11 @@ System.register(['@angular/core', './smoothie.service'], function(exports_1, con
                 }
                 /** Called by AngularJS after constructor and after injected services and child-components are set */
                 AppComponent.prototype.ngOnInit = function () {
-                    this.smoothies = this.smoothieService.getSmoothies();
+                    var _this = this;
+                    // this.smoothies = this.smoothieService.getSmoothies();
+                    this.smoothieService
+                        .getSmoothiesSlowly()
+                        .then(function (smoothies) { return _this.smoothies = smoothies; });
                 };
                 /**  assigns an Smoothie to the Component's "selectedSmoothie" property by clicking onto one of the Smoothies, which are listed on
                  * the *ngFor-generated smoothie list
