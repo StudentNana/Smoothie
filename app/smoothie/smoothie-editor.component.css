@@ -1,0 +1,16 @@
+button{
+    margin-right: 50px;
+    margin-top: 10px;
+    float:right;
+}
+
+
+.cancelBTN{
+    background-color: red;
+    color: #fff;
+}
+
+.saveBTN{
+    background-color: green;
+    color: #fff;
+}

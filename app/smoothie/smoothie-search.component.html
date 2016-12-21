@@ -1,0 +1,10 @@
+<div id="search-component">
+    <h4>Smoothie Search</h4>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    <div>
+        <div *ngFor="let smoothie of smoothies | async"
+            (click)="gotoDetail(smoothie); searchBox.value='';" class="search-result" >
+            {{smoothie.name}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="smoothie">
+    <h2>{{smoothie.name}} {{irgendEinName}}</h2>
+    <div>
+        <label> Name: </label> <input [(ngModel)]="smoothie.name" placeholder="name">
+    </div>
+    <div>
+        <label>Zutaten: </label> {{smoothie.zutaten}}
+    </div>
+    <div>
+        <label>Zubereitung: </label> <input [(ngModel)]="smoothie.zubereitung" placeholder="name">
+    </div>
+    <div>
+        <label>Bewertung: </label> {{smoothie.bewertung}}
+    </div>
+    <!-- <div>
+        <label> Obst: </label> <input #obstInput (keyup)="onKeyUp(obstInput.value)" placeholder="obst" >
+    </div> -->
+</div>
+<div *ngIf="!smoothie">
+    <p> Wähle einen Smoothie aus.</p>
+</div>
