@@ -10,6 +10,7 @@ import { Smoothie } from './smoothie';
     template: `
         <span>Name:</span>
         <span>{{smoothie.name}}</span>
+        
         `
 })
 export class SmoothieCardComponent {

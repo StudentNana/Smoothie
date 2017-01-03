@@ -35,7 +35,7 @@ System.register(['@angular/core', './smoothie'], function(exports_1, context_1) 
                 SmoothieCardComponent = __decorate([
                     core_1.Component({
                         selector: 'smoothie-card',
-                        template: "\n        <span>Name:</span>\n        <span>{{smoothie.name}}</span>\n        "
+                        template: "\n        <span>Name:</span>\n        <span>{{smoothie.name}}</span>\n        \n        "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], SmoothieCardComponent);
