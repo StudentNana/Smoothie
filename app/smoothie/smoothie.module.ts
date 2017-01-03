@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import { SmoothieDetailComponent} from './smoothie-detail.component';
 import { SmoothieEditorComponent} from './smoothie-editor.component';
 import { SmoothieCardComponent} from './smoothie-card.component';
+
 @NgModule({
     imports: [CommonModule, FormsModule],
     declarations: [

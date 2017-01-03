@@ -3,17 +3,13 @@
  * Mockup data of Smoothies
  * @author Nana
  */
-System.register([], function (exports_1, context_1) {
+System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var SMOOTHIES;
     return {
-        setters: [],
-        execute: function () {// Smoothie Objekt
-            /**
-             * Mockup data of Smoothies
-             * @author Nana
-             */
+        setters:[],
+        execute: function() {
             exports_1("SMOOTHIES", SMOOTHIES = [
                 { id: 1, name: 'Apfel', image: 'foto', bewertung: 4, groesse: 200, zutaten: '2 Äpfel, 1 Banane, 1/2 Schale Erdbeeren', zubereitung: ' Waschen, schneiden' },
                 { id: 2, name: 'Banane', image: "foto", bewertung: 5, groesse: 250, zutaten: '1 Banane, 200g Himbeeren', zubereitung: ' Waschen, schneiden' },
@@ -23,6 +19,6 @@ System.register([], function (exports_1, context_1) {
                 { id: 6, name: 'Spinat', image: "foto", bewertung: 4, groesse: 200, zutaten: '50 g Spinat, 1 Löffel Leinenöl,  2 Äpfel', zubereitung: ' Waschen, schneiden' }
             ]);
         }
-    };
+    }
 });
 //# sourceMappingURL=smoothies-mockdata.js.map
