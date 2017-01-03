@@ -2,9 +2,8 @@
  * displays a Smoothies name as a card (no editing) for listing
  * @author Nana
  */
-System.register(['@angular/core', './smoothie'], function(exports_1, context_1) {
+System.register(["@angular/core", "./smoothie"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -14,35 +13,39 @@ System.register(['@angular/core', './smoothie'], function(exports_1, context_1) 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, smoothie_1;
-    var SmoothieCardComponent;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, smoothie_1, SmoothieCardComponent;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
             function (smoothie_1_1) {
                 smoothie_1 = smoothie_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {/**
+             * displays a Smoothies name as a card (no editing) for listing
+             * @author Nana
+             */
             SmoothieCardComponent = (function () {
                 function SmoothieCardComponent() {
                 }
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', smoothie_1.Smoothie)
-                ], SmoothieCardComponent.prototype, "smoothie", void 0);
-                SmoothieCardComponent = __decorate([
-                    core_1.Component({
-                        selector: 'smoothie-card',
-                        template: "\n        <span>Name:</span>\n        <span>{{smoothie.name}}</span>\n        \n        "
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], SmoothieCardComponent);
                 return SmoothieCardComponent;
             }());
+            __decorate([
+                core_1.Input(),
+                __metadata("design:type", smoothie_1.Smoothie)
+            ], SmoothieCardComponent.prototype, "smoothie", void 0);
+            SmoothieCardComponent = __decorate([
+                core_1.Component({
+                    selector: 'smoothie-card',
+                    template: "\n        <img src=\"pic/smoothie.png\" class=\"pic\">\n        <span>{{smoothie.name}}</span>\n        "
+                }),
+                __metadata("design:paramtypes", [])
+            ], SmoothieCardComponent);
             exports_1("SmoothieCardComponent", SmoothieCardComponent);
         }
-    }
+    };
 });
 //# sourceMappingURL=smoothie-card.component.js.map

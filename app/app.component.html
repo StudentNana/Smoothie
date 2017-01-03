@@ -1,6 +1,5 @@
 <h1>{{title}}</h1>
 
-<p *ngIf="obst"> obst ist : {{obst}}</p>
 
 <h2 *ngIf="!smoothies">Loading Smoothies....</h2>
 <h2 *ngIf="smoothies"> Wählen Sie Ihr Smoothie aus! </h2>
@@ -8,16 +7,18 @@
 <ul class="smoothies">
     <li *ngFor="let listItem of smoothies; let i = index" [class.selected]="listItem.item === selectedSmoothie"  >
         <smoothie-card [hidden]="listItem.editing" [smoothie]="listItem.item"> </smoothie-card>
+        <button class="delete" (click)="delete(listItem.item); $event.stopPropagation()">x</button>
         <button (click)="onSelect(listItem.item)">Details</button>
-        <button [hidden]="listItem.editing"
-                (click)="listItem.editing = true">edit</button>
-        <smoothie-editor
-                (saved)="onSaved(listItem, $event)"
-                (canceled)="onCanceled(listItem)"
-                [hidden]="!listItem.editing"
-                [smoothie]="listItem.item">
-        </smoothie-editor>
+
+    </li>
+    <li>
+        <button *ngIf="!showNewSmoothie" (click)="onAddSmoothie()">New Smoothie</button>
+        <div *ngIf="showNewSmoothie">
+            <label>Smoothie name:</label> <input #smoothieName /><br>
+            <button (click)="cancelAddSmoothie()">cancel</button>
+            <button (click)="add(smoothieName.value); smoothieName.value='';">Add</button>
+        </div>
     </li>
 </ul>
 
-<my-smoothie-detail [hidden]="!selectedSmoothie" [smoothie]="selectedSmoothie" [details]= "details" (addObst)="obst=$event" ></my-smoothie-detail>
+<my-smoothie-detail [hidden]="!selectedSmoothie" [smoothie]="selectedSmoothie" [details]= "details" ></my-smoothie-detail>

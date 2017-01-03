@@ -1,6 +1,5 @@
-System.register(['@angular/core', '@angular/common', '@angular/forms', './smoothie-detail.component', './smoothie-editor.component', './smoothie-card.component'], function(exports_1, context_1) {
+System.register(["@angular/core", "@angular/common", "@angular/forms", "./smoothie-detail.component", "./smoothie-editor.component", "./smoothie-card.component", "./smoothie-search.component"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +9,10 @@ System.register(['@angular/core', '@angular/common', '@angular/forms', './smooth
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, forms_1, smoothie_detail_component_1, smoothie_editor_component_1, smoothie_card_component_1;
-    var SmoothieModule;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, common_1, forms_1, smoothie_detail_component_1, smoothie_editor_component_1, smoothie_card_component_1, smoothie_search_component_1, SmoothieModule;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -31,27 +30,37 @@ System.register(['@angular/core', '@angular/common', '@angular/forms', './smooth
             },
             function (smoothie_card_component_1_1) {
                 smoothie_card_component_1 = smoothie_card_component_1_1;
-            }],
-        execute: function() {
+            },
+            function (smoothie_search_component_1_1) {
+                smoothie_search_component_1 = smoothie_search_component_1_1;
+            }
+        ],
+        execute: function () {
             SmoothieModule = (function () {
                 function SmoothieModule() {
                 }
-                SmoothieModule = __decorate([
-                    core_1.NgModule({
-                        imports: [common_1.CommonModule, forms_1.FormsModule],
-                        declarations: [
-                            smoothie_detail_component_1.SmoothieDetailComponent,
-                            smoothie_editor_component_1.SmoothieEditorComponent,
-                            smoothie_card_component_1.SmoothieCardComponent
-                        ],
-                        exports: [smoothie_detail_component_1.SmoothieDetailComponent, smoothie_card_component_1.SmoothieCardComponent, smoothie_editor_component_1.SmoothieEditorComponent]
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], SmoothieModule);
                 return SmoothieModule;
             }());
+            SmoothieModule = __decorate([
+                core_1.NgModule({
+                    imports: [common_1.CommonModule, forms_1.FormsModule],
+                    declarations: [
+                        smoothie_detail_component_1.SmoothieDetailComponent,
+                        smoothie_editor_component_1.SmoothieEditorComponent,
+                        smoothie_card_component_1.SmoothieCardComponent,
+                        smoothie_search_component_1.SmoothieSearchComponent
+                    ],
+                    exports: [
+                        smoothie_detail_component_1.SmoothieDetailComponent,
+                        smoothie_card_component_1.SmoothieCardComponent,
+                        smoothie_editor_component_1.SmoothieEditorComponent,
+                        smoothie_search_component_1.SmoothieSearchComponent
+                    ]
+                }),
+                __metadata("design:paramtypes", [])
+            ], SmoothieModule);
             exports_1("SmoothieModule", SmoothieModule);
         }
-    }
+    };
 });
 //# sourceMappingURL=smoothie.module.js.map

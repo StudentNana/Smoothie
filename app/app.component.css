@@ -12,22 +12,15 @@
     list-style-type: none;
     padding: 10px;
     margin: 10px;
-    width: 90%;
-}
-.smoothies .pic{
-    margin-left: 5px;
-    width: 60px;
-    height: 87px;
-
+    width: 100%;
 }
 .smoothies li {
     display: inline-block;
-    position: relative;
     left: 0;
     background-color: rgba(101, 208, 251, 0.38);
     margin: .5em;
     padding: .3em 0;
-    height: 100px;
+    height: 190px;
     width: 300px;
     border-radius: 4px;
 }
@@ -52,4 +45,11 @@ button {
     float: none;
     background-color: #58c5a3;
     margin: 0 5px 0 15px;
+}
+button.delete {
+    float:right;
+    margin-top: 2px;
+    margin-right: .8em;
+    background-color: gray !important;
+    color:white;
 }

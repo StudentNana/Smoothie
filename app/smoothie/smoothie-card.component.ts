@@ -8,9 +8,8 @@ import { Smoothie } from './smoothie';
 @Component({
     selector: 'smoothie-card',
     template: `
-        <span>Name:</span>
+        <img src="pic/smoothie.png" class="pic">
         <span>{{smoothie.name}}</span>
-        
         `
 })
 export class SmoothieCardComponent {

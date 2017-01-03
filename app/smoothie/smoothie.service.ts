@@ -12,6 +12,8 @@ export class SmoothieService {
     getSmoothies(): Promise<Smoothie[]> {
         return Promise.resolve(SMOOTHIES);
     }
+
+    
     getSmoothiesSlowly(): Promise<Smoothie[]> {
         return new Promise<Smoothie[]>(resolve =>
             setTimeout(resolve, 2000)) // delay 2 seconds

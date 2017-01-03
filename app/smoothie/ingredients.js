@@ -1,17 +1,17 @@
 System.register([], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var Smoothie;
+    var Ingredients;
     return {
         setters: [],
         execute: function () {
-            Smoothie = (function () {
-                function Smoothie() {
+            Ingredients = (function () {
+                function Ingredients() {
                 }
-                return Smoothie;
+                return Ingredients;
             }());
-            exports_1("Smoothie", Smoothie);
+            exports_1("Ingredients", Ingredients);
         }
     };
 });
-//# sourceMappingURL=smoothie.js.map
+//# sourceMappingURL=ingredients.js.map

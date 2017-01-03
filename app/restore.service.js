@@ -1,10 +1,10 @@
-System.register([], function(exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var RestoreService;
     return {
-        setters:[],
-        execute: function() {
+        setters: [],
+        execute: function () {
             /**
              * Restore Service for JSON clonable objects
              * based on Angular tutorial https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html
@@ -33,6 +33,6 @@ System.register([], function(exports_1, context_1) {
             }());
             exports_1("RestoreService", RestoreService);
         }
-    }
+    };
 });
 //# sourceMappingURL=restore.service.js.map

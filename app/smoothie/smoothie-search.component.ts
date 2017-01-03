@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {SmoothieSearchService} from "./smoothie-search.service";
-import {Smoothie} from "./smoothie";
+import { SmoothieSearchService } from "./smoothie-search.service";
+import { Smoothie } from "./smoothie";
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 @Component({
-    selector: 'hero-search',
+    selector: 'smoothie-search',
     templateUrl: 'app/smoothie/smoothie-search.component.html',
     styleUrls: ['app/smoothie/smoothie-search.component.css'],
     providers: [SmoothieSearchService]

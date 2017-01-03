@@ -4,15 +4,22 @@ import {FormsModule} from '@angular/forms';
 import { SmoothieDetailComponent} from './smoothie-detail.component';
 import { SmoothieEditorComponent} from './smoothie-editor.component';
 import { SmoothieCardComponent} from './smoothie-card.component';
+import {SmoothieSearchComponent} from "./smoothie-search.component";
 
 @NgModule({
     imports: [CommonModule, FormsModule],
     declarations: [
         SmoothieDetailComponent,
         SmoothieEditorComponent,
-        SmoothieCardComponent
+        SmoothieCardComponent,
+        SmoothieSearchComponent
     ],
-    exports: [SmoothieDetailComponent, SmoothieCardComponent, SmoothieEditorComponent]
+    exports: [
+        SmoothieDetailComponent,
+        SmoothieCardComponent,
+        SmoothieEditorComponent,
+        SmoothieSearchComponent
+    ]
 })
 export class SmoothieModule {
 

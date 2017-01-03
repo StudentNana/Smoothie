@@ -31,12 +31,24 @@ export class AppComponent implements OnInit {
         });
     }
 
-    onSaved (editItem: EditItem<Smoothie>, updatedSmoothie: Smoothie) {
-        editItem.item = Object.assign(editItem.item, updatedSmoothie);
-        editItem.editing = false;
+    add(name: string): void {
+        name = name.trim();
+        if (!name) { return; }
+        this.smoothieService.create(name)
+            .then(smoothie => {
+                this.smoothies.push(new EditItem(smoothie));
+                this.selectedSmoothie = null;
+                this.showNewSmoothie = false;
+            });
     }
-    onCanceled (editItem: EditItem<Smoothie>) {
-        editItem.editing = false;
+
+    delete(smoothie: Smoothie): void {
+        this.smoothieService
+            .delete(smoothie.id)
+            .then(() => {
+                this.smoothies = this.smoothies.filter(h => h.item !== smoothie);
+                if (this.selectedSmoothie === smoothie) { this.selectedSmoothie = null; }
+            });
     }
 
     /**  assigns an Smoothie to the Component's "selectedSmoothie" property by clicking onto one of the Smoothies, which are listed on
@@ -45,4 +57,14 @@ export class AppComponent implements OnInit {
     onSelect(smoothie:Smoothie):void{
         this.selectedSmoothie = smoothie;
     }
+
+    onAddSmoothie(): void {
+        this.selectedSmoothie = null;
+        this.showNewSmoothie = true;
+    }
+
+    cancelAddSmoothie(): void{
+        this.showNewSmoothie = false;
+    }
+
 }

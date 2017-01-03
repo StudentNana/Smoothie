@@ -1,6 +1,5 @@
-System.register(['@angular/core', './smoothie/smoothie.service', "./edit-item"], function(exports_1, context_1) {
+System.register(["@angular/core", "./smoothie/smoothie.service", "./edit-item"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +9,10 @@ System.register(['@angular/core', './smoothie/smoothie.service', "./edit-item"],
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, smoothie_service_1, edit_item_1;
-    var AppComponent;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, smoothie_service_1, edit_item_1, AppComponent;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -22,8 +21,9 @@ System.register(['@angular/core', './smoothie/smoothie.service', "./edit-item"],
             },
             function (edit_item_1_1) {
                 edit_item_1 = edit_item_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             AppComponent = (function () {
                 function AppComponent(smoothieService) {
                     this.smoothieService = smoothieService;
@@ -42,12 +42,29 @@ System.register(['@angular/core', './smoothie/smoothie.service', "./edit-item"],
                         _this.smoothies = smoothies.map(function (item) { return new edit_item_1.EditItem(item); });
                     });
                 };
-                AppComponent.prototype.onSaved = function (editItem, updatedSmoothie) {
-                    editItem.item = Object.assign(editItem.item, updatedSmoothie);
-                    editItem.editing = false;
+                AppComponent.prototype.add = function (name) {
+                    var _this = this;
+                    name = name.trim();
+                    if (!name) {
+                        return;
+                    }
+                    this.smoothieService.create(name)
+                        .then(function (smoothie) {
+                        _this.smoothies.push(new edit_item_1.EditItem(smoothie));
+                        _this.selectedSmoothie = null;
+                        _this.showNewSmoothie = false;
+                    });
                 };
-                AppComponent.prototype.onCanceled = function (editItem) {
-                    editItem.editing = false;
+                AppComponent.prototype.delete = function (smoothie) {
+                    var _this = this;
+                    this.smoothieService
+                        .delete(smoothie.id)
+                        .then(function () {
+                        _this.smoothies = _this.smoothies.filter(function (h) { return h.item !== smoothie; });
+                        if (_this.selectedSmoothie === smoothie) {
+                            _this.selectedSmoothie = null;
+                        }
+                    });
                 };
                 /**  assigns an Smoothie to the Component's "selectedSmoothie" property by clicking onto one of the Smoothies, which are listed on
                  * the *ngFor-generated smoothie list
@@ -55,18 +72,25 @@ System.register(['@angular/core', './smoothie/smoothie.service', "./edit-item"],
                 AppComponent.prototype.onSelect = function (smoothie) {
                     this.selectedSmoothie = smoothie;
                 };
-                AppComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-app',
-                        styleUrls: ['app/app.component.css'],
-                        templateUrl: 'app/app.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [smoothie_service_1.SmoothieService])
-                ], AppComponent);
+                AppComponent.prototype.onAddSmoothie = function () {
+                    this.selectedSmoothie = null;
+                    this.showNewSmoothie = true;
+                };
+                AppComponent.prototype.cancelAddSmoothie = function () {
+                    this.showNewSmoothie = false;
+                };
                 return AppComponent;
             }());
+            AppComponent = __decorate([
+                core_1.Component({
+                    selector: 'my-app',
+                    styleUrls: ['app/app.component.css'],
+                    templateUrl: 'app/app.component.html'
+                }),
+                __metadata("design:paramtypes", [smoothie_service_1.SmoothieService])
+            ], AppComponent);
             exports_1("AppComponent", AppComponent);
         }
-    }
+    };
 });
 //# sourceMappingURL=app.component.js.map
