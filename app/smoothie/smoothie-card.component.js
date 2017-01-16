@@ -41,8 +41,7 @@ System.register(["@angular/core", "./smoothie"], function (exports_1, context_1)
                 core_1.Component({
                     selector: 'smoothie-card',
                     template: "\n        <img src=\"pic/smoothie.png\" class=\"pic\">\n        <span>{{smoothie.name}}</span>\n        "
-                }),
-                __metadata("design:paramtypes", [])
+                })
             ], SmoothieCardComponent);
             exports_1("SmoothieCardComponent", SmoothieCardComponent);
         }

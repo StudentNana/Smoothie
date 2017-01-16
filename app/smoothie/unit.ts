@@ -1,9 +1,9 @@
-enum Unit {
+export enum Unit {
     l,
     ml,
     kg,
     g,
-    Stück,
+    Stueck,
     EL,
     TL
 }

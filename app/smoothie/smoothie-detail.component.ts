@@ -3,6 +3,7 @@ import { Smoothie } from './smoothie';
 
 @Component({
     selector: 'my-smoothie-detail',
+    styleUrls: ['app/smoothie/smoothie-detail.component.css'],
     templateUrl: 'app/smoothie/smoothie-detail.component.html'
 })
 export class SmoothieDetailComponent {

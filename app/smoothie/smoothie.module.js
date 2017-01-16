@@ -6,9 +6,6 @@ System.register(["@angular/core", "@angular/common", "@angular/forms", "./smooth
         else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
-    var __metadata = (this && this.__metadata) || function (k, v) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-    };
     var __moduleName = context_1 && context_1.id;
     var core_1, common_1, forms_1, smoothie_detail_component_1, smoothie_editor_component_1, smoothie_card_component_1, smoothie_search_component_1, SmoothieModule;
     return {
@@ -52,12 +49,11 @@ System.register(["@angular/core", "@angular/common", "@angular/forms", "./smooth
                     ],
                     exports: [
                         smoothie_detail_component_1.SmoothieDetailComponent,
-                        smoothie_card_component_1.SmoothieCardComponent,
                         smoothie_editor_component_1.SmoothieEditorComponent,
+                        smoothie_card_component_1.SmoothieCardComponent,
                         smoothie_search_component_1.SmoothieSearchComponent
                     ]
-                }),
-                __metadata("design:paramtypes", [])
+                })
             ], SmoothieModule);
             exports_1("SmoothieModule", SmoothieModule);
         }

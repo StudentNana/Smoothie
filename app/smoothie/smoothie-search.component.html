@@ -1,9 +1,12 @@
 <div id="search-component">
-    <h4>Smoothie Search</h4>
-    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    <div>
+        <img src="pic/search.png" class="pic">
+        <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="search for the smoothie"/>
+    </div>
+
     <div>
         <div *ngFor="let smoothie of smoothies | async"
-            (click)="gotoDetail(smoothie); searchBox.value='';" class="search-result" >
+             (click)="gotoDetail(smoothie); searchBox.value='';" class="search-result" >
             {{smoothie.name}}
         </div>
     </div>

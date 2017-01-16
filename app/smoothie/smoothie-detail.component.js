@@ -45,9 +45,9 @@ System.register(["@angular/core", "./smoothie"], function (exports_1, context_1)
             SmoothieDetailComponent = __decorate([
                 core_1.Component({
                     selector: 'my-smoothie-detail',
+                    styleUrls: ['app/smoothie/smoothie-detail.component.css'],
                     templateUrl: 'app/smoothie/smoothie-detail.component.html'
-                }),
-                __metadata("design:paramtypes", [])
+                })
             ], SmoothieDetailComponent);
             exports_1("SmoothieDetailComponent", SmoothieDetailComponent);
         }

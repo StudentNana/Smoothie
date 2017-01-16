@@ -31,13 +31,13 @@ System.register(["@angular/core", "./smoothie/smoothie.service", "./edit-item"],
                     this.values = '';
                     this.selectedSmoothie = null;
                     this.details = "Smoothie-Details";
+                    this.showNewSmoothie = false;
                 }
                 /** Called by AngularJS after constructor and after injected services and child-components are set */
                 AppComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    // this.heroes = this.heroService.getHeroes();
                     this.smoothieService
-                        .getSmoothiesSlowly()
+                        .getSmoothies()
                         .then(function (smoothies) {
                         _this.smoothies = smoothies.map(function (item) { return new edit_item_1.EditItem(item); });
                     });
@@ -66,11 +66,9 @@ System.register(["@angular/core", "./smoothie/smoothie.service", "./edit-item"],
                         }
                     });
                 };
-                /**  assigns an Smoothie to the Component's "selectedSmoothie" property by clicking onto one of the Smoothies, which are listed on
-                 * the *ngFor-generated smoothie list
-                 * @param the Smoothie that has been clicked last */
                 AppComponent.prototype.onSelect = function (smoothie) {
                     this.selectedSmoothie = smoothie;
+                    this.showNewSmoothie = false;
                 };
                 AppComponent.prototype.onAddSmoothie = function () {
                     this.selectedSmoothie = null;

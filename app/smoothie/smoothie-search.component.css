@@ -7,8 +7,13 @@
     padding: 5px;
     background-color: white;
     cursor: pointer;
+    margin-left: 36px;
 }
 #search-box{
     width: 200px;
     height: 20px;
+}
+.pic{
+    width: 18px;
+    height: 18px;
 }

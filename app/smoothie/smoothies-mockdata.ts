@@ -4,6 +4,9 @@
  * @author Nana
  */
 
+/**
+ * 
+ 
 import { Smoothie } from './smoothie';
 
 export const SMOOTHIES: Smoothie[] = [
@@ -14,3 +17,5 @@ export const SMOOTHIES: Smoothie[] = [
     { id: 5, name: 'Orange',   image: "foto",  bewertung: 6, groesse: 200, zutaten: ' 3 Orangen, 200g Erdbeeren, 1 Äpfel',         zubereitung: ' Waschen, schneiden' },
     { id: 6, name: 'Spinat',   image: "foto",  bewertung: 4, groesse: 200, zutaten: '50 g Spinat, 1 Löffel Leinenöl,  2 Äpfel',    zubereitung: ' Waschen, schneiden' }
 ];
+
+ */

@@ -30,7 +30,7 @@ export class SmoothieSearchComponent implements OnInit {
             .switchMap(term => term   // switch to new observable each time
                 // return the http search observable
                 ? this.smoothieSearchService.search(term)
-                // or the observable of empty heroes if no search term
+                // or the observable of empty smoothies if no search term
                 : Observable.of<Smoothie[]>([]))
             .catch(error => {
                 console.log(error);

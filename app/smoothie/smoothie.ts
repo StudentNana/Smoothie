@@ -1,10 +1,11 @@
-export class Smoothie{
+import { Ingredients } from './ingredients';
+
+export class Smoothie {
     id: number;
     name: string;
     image: string;
     bewertung: number;
     groesse: number;
-    zutaten: string;
+    zutaten: Ingredients;
     zubereitung: string;
-    obst: string;
 }

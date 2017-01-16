@@ -15,7 +15,7 @@
     width: 100%;
 }
 .smoothies li {
-    display: inline-block;
+    display: inline-table;
     left: 0;
     background-color: rgba(101, 208, 251, 0.38);
     margin: .5em;
@@ -43,13 +43,36 @@
 }
 button {
     float: none;
-    background-color: #58c5a3;
-    margin: 0 5px 0 15px;
+    background-color: #27ad83;
+    margin: 0 5px 0 5px;
+    color: white;
+    font-family: "Lucida Grande", Arial;
+    letter-spacing: 0.05em;
 }
 button.delete {
     float:right;
     margin-top: 2px;
     margin-right: .8em;
-    background-color: gray !important;
+    background-color: #d40101 !important;
     color:white;
+}
+.newSmoothie{
+    margin: 10px;
+}
+.cancelBTN{
+    margin-left: 70px;
+    margin-top: 20px;
+    background-color: #d40101;
+}
+.addBTN{
+    margin-left: 30px;
+    margin-top: 20px;
+    background-color: #349452;
+}
+.newBTN{
+    margin-top: 142px;
+
+}
+.detailsBTN{
+    margin-left: 30px;
 }

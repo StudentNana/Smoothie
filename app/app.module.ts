@@ -1,27 +1,27 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { SmoothieDetailComponent } from './smoothie/smoothie-detail.component';
-import { SmoothieService } from './smoothie/smoothie.service';
-import { SmoothieEditorComponent } from './smoothie/smoothie-editor.component';
-import { SmoothieCardComponent } from './smoothie/smoothie-card.component';
+import { AppComponent }  from './app.component';
+import { HttpModule } from "@angular/http";
+import { InMemoryWebApiModule } from "angular-in-memory-web-api";
+import { InMemoryDataService } from './in-memory-data.service';
+import './rxjs-extensions';
+import {SmoothieService} from "./smoothie/smoothie.service";
+import {SmoothieModule} from "./smoothie/smoothie.module";
 
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        HttpModule,
+        InMemoryWebApiModule.forRoot(InMemoryDataService),
+        SmoothieModule
     ],
     declarations: [
-        AppComponent,
-        SmoothieEditorComponent,
-        SmoothieCardComponent,
-        SmoothieDetailComponent,
+        AppComponent
     ],
     providers: [SmoothieService],
     bootstrap: [AppComponent]
 })
-
 export class AppModule {
-
 }

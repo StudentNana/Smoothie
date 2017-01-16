@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Smoothie } from './smoothie/smoothie';
-import { SmoothieService } from './smoothie/smoothie.service'
+import { SmoothieService } from './smoothie/smoothie.service';
 import {EditItem} from "./edit-item";
 
 @Component({
@@ -15,17 +15,17 @@ export class AppComponent implements OnInit {
     values: string = '';
     selectedSmoothie: Smoothie = null;
     details: string = "Smoothie-Details";
+    showNewSmoothie: boolean = false;
 
-    constructor(private smoothieService:SmoothieService){
+    constructor(private smoothieService: SmoothieService) {
 
     }
 
     /** Called by AngularJS after constructor and after injected services and child-components are set */
 
     ngOnInit(): void {
-        // this.heroes = this.heroService.getHeroes();
         this.smoothieService
-            .getSmoothiesSlowly()
+            .getSmoothies()
             .then(smoothies => {
             this.smoothies = smoothies.map(item => new EditItem(item));
         });
@@ -41,7 +41,6 @@ export class AppComponent implements OnInit {
                 this.showNewSmoothie = false;
             });
     }
-
     delete(smoothie: Smoothie): void {
         this.smoothieService
             .delete(smoothie.id)
@@ -50,20 +49,15 @@ export class AppComponent implements OnInit {
                 if (this.selectedSmoothie === smoothie) { this.selectedSmoothie = null; }
             });
     }
-
-    /**  assigns an Smoothie to the Component's "selectedSmoothie" property by clicking onto one of the Smoothies, which are listed on
-     * the *ngFor-generated smoothie list
-     * @param the Smoothie that has been clicked last */
-    onSelect(smoothie:Smoothie):void{
+    onSelect(smoothie: Smoothie): void {
         this.selectedSmoothie = smoothie;
+        this.showNewSmoothie = false;
     }
-
     onAddSmoothie(): void {
         this.selectedSmoothie = null;
         this.showNewSmoothie = true;
     }
-
-    cancelAddSmoothie(): void{
+    cancelAddSmoothie(): void {
         this.showNewSmoothie = false;
     }
 
