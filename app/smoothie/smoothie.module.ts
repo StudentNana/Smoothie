@@ -5,6 +5,7 @@ import {SmoothieDetailComponent} from "./smoothie-detail.component";
 import {SmoothieEditorComponent} from "./smoothie-editor.component";
 import {SmoothieCardComponent} from "./smoothie-card.component";
 import {SmoothieSearchComponent} from "./smoothie-search.component";
+import {Ingredients} from "./ingredients";
 
 @NgModule({
     imports: [CommonModule, FormsModule],
@@ -12,13 +13,15 @@ import {SmoothieSearchComponent} from "./smoothie-search.component";
         SmoothieDetailComponent,
         SmoothieEditorComponent,
         SmoothieCardComponent,
-        SmoothieSearchComponent
+        SmoothieSearchComponent,
+        Ingredients
     ],
     exports: [
         SmoothieDetailComponent,
         SmoothieEditorComponent,
         SmoothieCardComponent,
-        SmoothieSearchComponent
+        SmoothieSearchComponent,
+        Ingredients
     ]
 })
 export class SmoothieModule { }

@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/platform-browser", "@angular/forms", "./app.component", "@angular/http", "angular-in-memory-web-api", "./in-memory-data.service", "./rxjs-extensions", "./smoothie/smoothie.service", "./smoothie/smoothie.module"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/platform-browser", "@angular/forms", "./app.component", "@angular/http", "angular-in-memory-web-api", "./in-memory-data.service", "./rxjs-extensions", "./smoothie/smoothie.service", "./smoothie/smoothie.module", "./restore.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, platform_browser_1, forms_1, app_component_1, http_1, angular_in_memory_web_api_1, in_memory_data_service_1, smoothie_service_1, smoothie_module_1, AppModule;
+    var core_1, platform_browser_1, forms_1, app_component_1, http_1, angular_in_memory_web_api_1, in_memory_data_service_1, smoothie_service_1, smoothie_module_1, restore_service_1, AppModule;
     return {
         setters: [
             function (core_1_1) {
@@ -38,6 +38,9 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
             },
             function (smoothie_module_1_1) {
                 smoothie_module_1 = smoothie_module_1_1;
+            },
+            function (restore_service_1_1) {
+                restore_service_1 = restore_service_1_1;
             }
         ],
         execute: function () {
@@ -58,7 +61,7 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
                     declarations: [
                         app_component_1.AppComponent
                     ],
-                    providers: [smoothie_service_1.SmoothieService],
+                    providers: [smoothie_service_1.SmoothieService, restore_service_1.RestoreService],
                     bootstrap: [app_component_1.AppComponent]
                 })
             ], AppModule);

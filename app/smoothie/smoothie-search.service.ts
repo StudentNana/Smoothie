@@ -6,6 +6,7 @@ import { Smoothie } from './smoothie';
 @Injectable()
 export class SmoothieSearchService {
     constructor(private http: Http) {}
+    
     search(term: string): Observable<Smoothie[]> {
         return this.http
             .get(`app/smoothies/?name=${term}`)

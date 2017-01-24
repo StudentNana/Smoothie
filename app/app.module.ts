@@ -8,6 +8,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 import './rxjs-extensions';
 import {SmoothieService} from "./smoothie/smoothie.service";
 import {SmoothieModule} from "./smoothie/smoothie.module";
+import {RestoreService} from "./restore.service";
 
 @NgModule({
     imports: [
@@ -20,7 +21,7 @@ import {SmoothieModule} from "./smoothie/smoothie.module";
     declarations: [
         AppComponent
     ],
-    providers: [SmoothieService],
+    providers: [SmoothieService, RestoreService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

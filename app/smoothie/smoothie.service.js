@@ -34,7 +34,7 @@ System.register(["@angular/core", "@angular/http", "rxjs/add/operator/toPromise"
                 function SmoothieService(http) {
                     this.http = http;
                     this.smoothieUrl = 'app/smoothies';
-                    // private smoothieUrlApi = 'http://localhost:3100/smoothies';
+                    this.smoothieUrlApi = 'http://localhost:3100/smoothies';
                     this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
                 }
                 SmoothieService.prototype.getSmoothies = function () {

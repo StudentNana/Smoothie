@@ -53,26 +53,53 @@ button.delete {
     float:right;
     margin-top: 2px;
     margin-right: .8em;
-    background-color: #d40101 !important;
+    background-color: grey !important;
     color:white;
+    width: 17px;
+    height: 17px;
+    padding:0;
 }
-.newSmoothie{
-    margin: 10px;
+.delete:hover{
+    background-color: #d40101 !important;
 }
 .cancelBTN{
     margin-left: 70px;
     margin-top: 20px;
     background-color: #d40101;
 }
+.cancelBTN:hover{
+    background-color: #b91313;
+}
 .addBTN{
     margin-left: 30px;
     margin-top: 20px;
     background-color: #349452;
 }
+
+.detailsBTN{
+    margin-left: 30px;
+}
+.detailsBTN:hover{
+    background-color: #2bdea6;
+}
+
 .newBTN{
     margin-top: 142px;
 
 }
-.detailsBTN{
+button:hover{
+    background-color: #18966f;
+}
+.add{
+    width: 150px;
+    height: 30px;
+    margin: 10px;
     margin-left: 30px;
+    font-size: 14px;
+    background-color: #09bace;
+    color: #000;
+}
+.add:hover{
+    background-color: #01d5ec;
+    color:#fff;
 }

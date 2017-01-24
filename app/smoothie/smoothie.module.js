@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/common", "@angular/forms", "./smoothie-detail.component", "./smoothie-editor.component", "./smoothie-card.component", "./smoothie-search.component"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/common", "@angular/forms", "./smoothie-detail.component", "./smoothie-editor.component", "./smoothie-card.component", "./smoothie-search.component", "./ingredients"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/common", "@angular/forms", "./smooth
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, common_1, forms_1, smoothie_detail_component_1, smoothie_editor_component_1, smoothie_card_component_1, smoothie_search_component_1, SmoothieModule;
+    var core_1, common_1, forms_1, smoothie_detail_component_1, smoothie_editor_component_1, smoothie_card_component_1, smoothie_search_component_1, ingredients_1, SmoothieModule;
     return {
         setters: [
             function (core_1_1) {
@@ -30,6 +30,9 @@ System.register(["@angular/core", "@angular/common", "@angular/forms", "./smooth
             },
             function (smoothie_search_component_1_1) {
                 smoothie_search_component_1 = smoothie_search_component_1_1;
+            },
+            function (ingredients_1_1) {
+                ingredients_1 = ingredients_1_1;
             }
         ],
         execute: function () {
@@ -45,13 +48,15 @@ System.register(["@angular/core", "@angular/common", "@angular/forms", "./smooth
                         smoothie_detail_component_1.SmoothieDetailComponent,
                         smoothie_editor_component_1.SmoothieEditorComponent,
                         smoothie_card_component_1.SmoothieCardComponent,
-                        smoothie_search_component_1.SmoothieSearchComponent
+                        smoothie_search_component_1.SmoothieSearchComponent,
+                        ingredients_1.Ingredients
                     ],
                     exports: [
                         smoothie_detail_component_1.SmoothieDetailComponent,
                         smoothie_editor_component_1.SmoothieEditorComponent,
                         smoothie_card_component_1.SmoothieCardComponent,
-                        smoothie_search_component_1.SmoothieSearchComponent
+                        smoothie_search_component_1.SmoothieSearchComponent,
+                        ingredients_1.Ingredients
                     ]
                 })
             ], SmoothieModule);

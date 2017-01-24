@@ -12,7 +12,7 @@ import 'rxjs/add/operator/toPromise';
 export class SmoothieService {
 
     private smoothieUrl = 'app/smoothies';
-    // private smoothieUrlApi = 'http://localhost:3100/smoothies';
+    private smoothieUrlApi = 'http://localhost:3100/smoothies';
     private headers = new Headers({'Content-Type': 'application/json'});
     constructor(public http: Http) { }
 

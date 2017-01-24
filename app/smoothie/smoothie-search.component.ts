@@ -43,7 +43,6 @@ export class SmoothieSearchComponent implements OnInit {
     }
 
     gotoDetail(smoothie: Smoothie): void {
-        //onSelect(smoothie);
         this.smoothies = Observable.of<Smoothie[]>([]);
         this.initSmoothies();
         this.showDetails.emit(smoothie);

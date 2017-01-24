@@ -53,7 +53,6 @@ System.register(["@angular/core", "./smoothie-search.service", "rxjs/Observable"
                     this.searchTerms.next(term);
                 };
                 SmoothieSearchComponent.prototype.gotoDetail = function (smoothie) {
-                    //onSelect(smoothie);
                     this.smoothies = Observable_1.Observable.of([]);
                     this.initSmoothies();
                     this.showDetails.emit(smoothie);

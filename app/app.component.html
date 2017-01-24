@@ -10,17 +10,18 @@
         <smoothie-card [hidden]="listItem.editing" [smoothie]="listItem.item"> </smoothie-card>
         <button class="delete" (click)="delete(listItem.item); $event.stopPropagation()">x</button>
         <button class="detailsBTN" (click)="onSelect(listItem.item)">Details</button>
-
     </li>
 
-    <li>
-        <button class="newBTN" *ngIf="!showNewSmoothie" (click)="onAddSmoothie()">New Smoothie</button>
-        <div *ngIf="showNewSmoothie" class="newSmoothie">
-            <label>Smoothie name:</label> <input #smoothieName /><br>
-            <button class="cancelBTN" (click)="cancelAddSmoothie()">cancel</button>
-            <button class="addBTN" (click)="add(smoothieName.value); smoothieName.value='';">Add</button>
-        </div>
-    </li>
+
 </ul>
+<div>
+    <button class="add" *ngIf="!showNewSmoothie" (click)="onAddSmoothie()">New Smoothie</button>
+    <div *ngIf="showNewSmoothie" class="newSmoothie">
 
-<my-smoothie-detail [hidden]="!selectedSmoothie" [smoothie]="selectedSmoothie" [details]= "details" ></my-smoothie-detail>
+        <label>Smoothie name:</label> <input #smoothieName /><br>
+        <button class="cancelBTN" (click)="cancelAddSmoothie()">cancel</button>
+        <button class="addBTN" (click)="add(smoothieName.value); smoothieName.value='';">Add</button>
+    </div>
+</div>
+
+<my-smoothie-detail [hidden]="!selectedSmoothie" [smoothie]="selectedSmoothie" ></my-smoothie-detail>
