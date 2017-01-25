@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
     smoothies: Array<EditItem<Smoothie>>;
     values: string = '';
     selectedSmoothie: Smoothie = null;
-    //details: string = "Smoothie-Details";
     showNewSmoothie: boolean = false;
 
     constructor(private smoothieService: SmoothieService) {

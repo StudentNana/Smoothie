@@ -6,7 +6,7 @@
 <h2 *ngIf="smoothies"> Wählen Sie Ihr Smoothie aus! </h2>
 
 <ul class="smoothies">
-    <li *ngFor="let listItem of smoothies; let i = index" [class.selected]="listItem.item === selectedSmoothie"  >
+    <li *ngFor="let listItem of smoothies; let i = index" [class.selected]="listItem.item === selectedSmoothie">
         <smoothie-card [hidden]="listItem.editing" [smoothie]="listItem.item"> </smoothie-card>
         <button class="delete" (click)="delete(listItem.item); $event.stopPropagation()">x</button>
         <button class="detailsBTN" (click)="onSelect(listItem.item)">Details</button>
@@ -24,4 +24,4 @@
     </div>
 </div>
 
-<my-smoothie-detail [hidden]="!selectedSmoothie" [smoothie]="selectedSmoothie" ></my-smoothie-detail>
+<my-smoothie-detail [hidden]="!selectedSmoothie" [smoothie]="selectedSmoothie" > </my-smoothie-detail>

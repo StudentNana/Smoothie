@@ -13,7 +13,19 @@
         <div class="form-group">
             <div>
                 <label>Ingredients: </label>
-                <ingredients-details> </ingredients-details>
+                <div *ngFor="let item of smoothie.zutaten;let i = index">
+                        <input type="text" [(ngModel)]="item.name" name="iname{{i}}" #name="ngModel" style="width: 40px;">
+                        <input type="text" [(ngModel)]="item.measure" name="measure{{i}}" #name="ngModel" style="width: 20px;">
+                        <select [(ngModel)]="item.unit" name="unit{{i}}" #name="ngModel">
+                            <option> kg </option>
+                            <option> g </option>
+                            <option> Stück </option>
+                            <option> EL </option>
+                            <option> TL </option>
+                        </select>
+                </div>
+                <ingredients-details>
+                </ingredients-details>
             </div>
         </div>
         <div>

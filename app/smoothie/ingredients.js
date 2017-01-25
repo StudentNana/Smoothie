@@ -1,4 +1,4 @@
-System.register(["@angular/core"], function (exports_1, context_1) {
+System.register(["@angular/core", "./ingredients.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,11 +7,14 @@ System.register(["@angular/core"], function (exports_1, context_1) {
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, Ingredients;
+    var core_1, ingredients_service_1, Ingredients, Container;
     return {
         setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (ingredients_service_1_1) {
+                ingredients_service_1 = ingredients_service_1_1;
             }
         ],
         execute: function () {
@@ -24,10 +27,22 @@ System.register(["@angular/core"], function (exports_1, context_1) {
                 core_1.Component({
                     selector: 'ingredients-details',
                     styleUrls: ['app/smoothie/ingredients.css'],
-                    templateUrl: 'app/smoothie/ingredients.html'
+                    templateUrl: 'app/smoothie/ingredients.html',
+                    providers: [ingredients_service_1.IngredientsService]
                 })
             ], Ingredients);
             exports_1("Ingredients", Ingredients);
+            Container = (function () {
+                function Container(ingredientsService) {
+                    this.ingredientsService = ingredientsService;
+                    this.ingredients = null;
+                }
+                Container.prototype.ngOnInit = function () {
+                    this.ingredients = this.ingredientsService.getIngredients();
+                };
+                return Container;
+            }());
+            exports_1("Container", Container);
         }
     };
 });

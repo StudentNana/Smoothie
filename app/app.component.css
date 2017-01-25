@@ -78,9 +78,12 @@ button.delete {
 
 .detailsBTN{
     margin-left: 30px;
+    background-color: #02825a;
+    color: black;
 }
 .detailsBTN:hover{
-    background-color: #2bdea6;
+    background-color: #10653E;
+    color: #fff;
 }
 
 .newBTN{

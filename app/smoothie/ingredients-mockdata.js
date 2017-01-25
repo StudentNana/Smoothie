@@ -17,12 +17,12 @@ System.register(["./unit"], function (exports_1, context_1) {
              * @author Nana
              */
             exports_1("INGREDIENTS", INGREDIENTS = [
-                { id: 1, name: 'Apfel', measure: 2, unit: unit_1.Unit.kg },
-                { id: 2, name: 'Banane', measure: 2, unit: unit_1.Unit.kg },
-                { id: 3, name: 'Gurke', measure: 2, unit: unit_1.Unit.g },
-                { id: 4, name: 'Kiwi', measure: 2, unit: unit_1.Unit.Stueck },
-                { id: 5, name: 'Orange', measure: 2, unit: unit_1.Unit.Stueck },
-                { id: 6, name: 'Spinat', measure: 2, unit: unit_1.Unit.TL }
+                { name: 'Apfel', measure: 5, unit: unit_1.Unit.kg },
+                { name: 'Gurke', measure: 6, unit: unit_1.Unit.kg },
+                { name: 'Gurke', measure: 3, unit: unit_1.Unit.g },
+                { name: 'Kiwi', measure: 2, unit: unit_1.Unit.Stueck },
+                { name: 'Orange', measure: 4, unit: unit_1.Unit.Stueck },
+                { name: 'Spinat', measure: 5, unit: unit_1.Unit.TL }
             ]);
         }
     };

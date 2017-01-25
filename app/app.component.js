@@ -30,7 +30,6 @@ System.register(["@angular/core", "./smoothie/smoothie.service", "./edit-item"],
                     this.title = "Unsere leckere Smoothies!";
                     this.values = '';
                     this.selectedSmoothie = null;
-                    //details: string = "Smoothie-Details";
                     this.showNewSmoothie = false;
                 }
                 /** Called by AngularJS after constructor and after injected services and child-components are set */

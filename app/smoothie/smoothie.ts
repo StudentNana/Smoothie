@@ -6,6 +6,6 @@ export class Smoothie {
     image: string;
     bewertung: number;
     groesse: number;
-    zutaten: Ingredients;
+    zutaten: Ingredients[];
     zubereitung: string;
 }
